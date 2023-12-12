@@ -1,0 +1,99 @@
+
+
+#hero{
+    height: 800px;
+    background-image: url(/photo/ocean.jpg);
+    background-size: cover;
+    background-position: center;
+}
+#hero-content{
+    width: 900px;
+    background-color: rgba(51, 47, 47, 0.8);
+    box-shadow: 2px 4px 9px rgb(68, 67, 67);
+    border-radius: 8px;
+    text-align: center;
+    padding: 50px 0;
+    margin: 0 auto;
+    position: relative;
+    top: 200px;
+}
+#hero-content h1{
+    color: white;
+    text-transform: uppercase;
+    font-size: 40px;
+}
+#hero-content p{
+    color: rgb(218, 192, 192);
+    font-size: 20px;
+}
+#hero-content a{
+    text-decoration: none;
+    color: black;
+    padding: 12px 24px;
+    background-color: rgb(236, 234, 77);
+border-radius: 8px;
+box-shadow: 1px 1px 2px;
+}
+#hero-content h1:hover{
+color: rgba(151,204,195,255);
+}
+#hero-content a:hover{
+   /* color: rgb(51, 156, 148);*/
+    box-shadow: 8px 8px 8px;
+    border-radius: 8px;
+    background-color: rgb(241, 239, 71);
+border-radius: 8px;
+}
+#highlights{
+    padding: 24px;
+    background: linear-gradient(135deg,rgb(227,255,253),rgb(202,243,240));
+}
+#highlights h2{
+text-align: center;
+text-transform: uppercase;
+font-size: 40px;
+color: rgb(59, 65, 64);
+margin: 24px 0;
+}
+
+ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+#destinations{
+display: flex;
+width: 90%;
+margin: auto;
+margin-bottom: 40px;
+justify-content: center;
+}
+.destination{
+margin: 0 20px;
+text-transform: uppercase;
+
+}
+.destination p{
+    text-align: center;
+    font-size: 24px;
+color: rgb(124, 123, 123);
+margin: 20px 0;
+}
+.destination img{
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 2px 4px 8px rgb(68, 67, 67);
+border-radius: 10px;
+}
+.destination strong{
+    color: rgb(0 , 160, 170);
+}
+.foot img{
+    display: flex;
+    justify-content: center;
+    height: 200px;
+}
