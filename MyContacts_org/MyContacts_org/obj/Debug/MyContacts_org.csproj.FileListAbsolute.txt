@@ -1,0 +1,11 @@
+D:\Learn\#C#\MyContacts_org\MyContacts_org\bin\Debug\MyContacts_org.exe.config
+D:\Learn\#C#\MyContacts_org\MyContacts_org\bin\Debug\MyContacts_org.exe
+D:\Learn\#C#\MyContacts_org\MyContacts_org\bin\Debug\MyContacts_org.pdb
+D:\Learn\#C#\MyContacts_org\MyContacts_org\obj\Debug\MyContacts_org.csproj.AssemblyReference.cache
+D:\Learn\#C#\MyContacts_org\MyContacts_org\obj\Debug\MyContacts_org.Form1.resources
+D:\Learn\#C#\MyContacts_org\MyContacts_org\obj\Debug\MyContacts_org.Properties.Resources.resources
+D:\Learn\#C#\MyContacts_org\MyContacts_org\obj\Debug\MyContacts_org.csproj.GenerateResource.cache
+D:\Learn\#C#\MyContacts_org\MyContacts_org\obj\Debug\MyContacts_org.csproj.CoreCompileInputs.cache
+D:\Learn\#C#\MyContacts_org\MyContacts_org\obj\Debug\MyContacts_org.exe
+D:\Learn\#C#\MyContacts_org\MyContacts_org\obj\Debug\MyContacts_org.pdb
+D:\Learn\#C#\MyContacts_org\MyContacts_org\obj\Debug\MyContacts_org.AddEdit.resources
