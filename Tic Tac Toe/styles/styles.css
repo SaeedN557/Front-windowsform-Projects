@@ -1,0 +1,43 @@
+body{
+    font-size: 2rem;
+    direction: rtl;
+    text-align: center;
+    font-family: "B Kamran", sans-serif;
+    margin: 0;
+    color: rgb(27, 23, 23);
+    background-color: rgb(255, 255, 255);
+}
+#main-header{
+    background-color: rgb(140, 0, 255);
+    padding: 0.1rem 5%;
+    text-align: center;
+    color: white;
+}
+
+.btn{
+    font: inherit;
+    background-color: rgb(140, 0, 255);
+    border: 1px solid white;
+    border-radius: 4px;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    cursor: pointer;
+}
+.btn-alt{
+    background-color: transparent;
+    color: transparent;
+    border: transparent;
+    color: rgb(79, 10, 255);
+    font-weight: bold;
+}
+
+.btn:hover{
+    background-color: rgb(79, 10, 190);
+    color: white;
+}
+.btn-alt:hover{
+    background-color: rgb(245, 232 , 255);
+    border-color: transparent;
+    color: rgb(140, 0, 255);
+    font-weight: bold;
+}

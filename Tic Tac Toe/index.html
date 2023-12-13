@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>TIC TAC TOE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/styles/styles.css">
+    <link rel="stylesheet" href="/styles/overlays.css">
+    <link rel="stylesheet" href="/styles/configuration.css">
+    <link rel="stylesheet" href="/styles/game.css">
+    <script src="/scripts/config.js" defer></script>
+    <script src="/scripts/app.js" defer></script>
+  </head>
+  <body>
+    <div id="backdrop"></div>
+    <header id="main-header">
+      <h1>سبزه قطار</h1>
+      <p>اولین نفر که به ردیف سه تایی برسد برنده است</p>
+    </header>
+    <main>
+      <aside class="modal" id="config-overlay">
+        <h2>نام خود را وارد کنید</h2>
+        <form>
+          <div class="form-control">
+            <label for="playername" class="player-name">نام بازیکن</label>
+            <input type="text" name="playername" id="playername" required />
+          </div>
+          <p id="config-error"></p>
+          <div>
+            <button type="reset" class="btn btn-alt" id="name-edit-cancel">لفو</button>
+            <button type="submit" class="btn" id="name-edit-confirm">تایید</button>
+          </div>
+        </form>
+      </aside>
+      <section id="game-configuration">
+        <ol>
+          <li>
+            <article id="player-1-data">
+              <h2>بازیکن اول</h2>
+              <h3 class="player-name">نام بازیکن</h3>
+              <p class="player-symbol">X</p>
+              <button class="btn btn-alt" id="player-1-change" data-playerid="1">تغییر</button>
+            </article>
+          </li>
+          <li>
+            <article id="player-2-data">
+              <h2>بازیکن دوم</h2>
+              <h3>نام بازیکن</h3>
+              <p class="player-symbol">O</p>
+              <button class="btn btn-alt" id="player-2-change" data-playerid="2">تغییر</button>
+            </article>
+          </li>
+        </ol>
+        <button class="btn" id="start-game-btn">شروع</button>
+      </section>
+      <section id="active-game">
+        <article id="game-over">
+          <h3>تبریک <span id="winner-player"><br>نام بازیکن</span><br>تو برنده بازی هستی!</h3>
+          <p>برای شروع بازی جدید کلیک کنید</p>
+        </article>
+        <p>نوبت توئه <span id="active-player-name">نام بازیکن </span></p>
+        <ol id="game-board">
+          <li data-col="1" data-row="1"></li>
+          <li data-col="2" data-row="1"></li>
+          <li data-col="3" data-row="1"></li>
+
+          <li data-col="1" data-row="2"></li>
+          <li data-col="2" data-row="2"></li>
+          <li data-col="3" data-row="2"></li>
+
+          <li data-col="1" data-row="3"></li>
+          <li data-col="2" data-row="3"></li>
+          <li data-col="3" data-row="3"></li>
+        </ol>
+      </section>
+    </main>
+  </body>
+</html>
