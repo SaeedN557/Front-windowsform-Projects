@@ -113,9 +113,5 @@ namespace MyContacts_org
             finally { connection.Close(); }
         }
 
-        public bool update(string text1, string text2, string text3, int v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
