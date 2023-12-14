@@ -33,7 +33,7 @@ const gameArea=document.getElementById('active-game');
 const gameBoardElement = document.getElementById('game-board');
 const gameOverBanner=document.getElementById('game-over');
 const gameOverGamer=document.getElementById('winner-player');
-
+const reloadGame=document.getElementById('reload');
 const playerTurn=document.getElementById('active-player-name');
 
 playerOneName.addEventListener('click',OpenPlayerConfig);
@@ -50,3 +50,4 @@ startnewgamebtn.addEventListener('click',startGame);
     track.addEventListener('click',houseselector);
 }*/
 gameBoardElement.addEventListener('click', houseselector);
+reloadGame.addEventListener('click',reloadGameFunc);
