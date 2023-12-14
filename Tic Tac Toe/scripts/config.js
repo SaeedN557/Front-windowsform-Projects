@@ -125,6 +125,7 @@ function houseselector(event){
       }
       currentRound++;
       switchPlayer();
+      startGame();
 } 
 
 
@@ -132,10 +133,14 @@ function houseselector(event){
     function winnerShow(winnerId){
         gameOverBanner.style.display='block';
         if(winnerId>0){
-            gameOverGamer.textContent=players[winnerId-1].name;
+            gameOverGamer.textContent=players[winnerId-1];
         }
         else{
-            gameOverBanner.firstElementChild.textContent="مساوی شد !"
+            gameOverBanner.firstElementChild.textContent="مساوی شد !";
         }
-        
+        gameOverBanner.style.cursor='pointer';
+        configplayerNameBack.style.display="block";
+    }
+    function reloadGameFunc(){
+        location.reload();
     }
