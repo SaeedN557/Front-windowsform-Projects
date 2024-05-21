@@ -1,0 +1,9 @@
+﻿@model RegisterViewModel
+
+@{
+    ViewData["Title"] = "عملیات موفق";
+}
+<style>body{text-align:center}</style>
+
+<h1 style="margin-top:50px">ثبت نام کاربر @Model.UserEmail با موفقیت انجام شد</h1>
+<div class="alert alertsuccess" style="text-align:center">برای ورود <a asp-controller="Account" asp-action="Login" style="color:red">اینجا</a> کلیک کنید </div>

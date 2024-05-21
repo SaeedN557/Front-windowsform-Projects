@@ -1,0 +1,45 @@
+﻿@model WebFood_2.Models.RegisterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+}
+<script src="~/js/app.js" defer></script>
+
+<style>body{text-align:center;}</style>
+
+<h1>ثبت نام</h1>
+
+<div class="row content">
+    <div class="col-12">
+        <form method="post" asp-action="Register">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserName" class="control-label"></label>
+                <input id="validate" asp-for="UserName" class="form-control" />
+                <span id="validateerr" asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserEmail" class="control-label"></label>
+                <input asp-for="UserEmail" class="form-control" />
+                <span asp-validation-for="UserEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RePassword" class="control-label"></label>
+                <input asp-for="RePassword" class="form-control" />
+                <span asp-validation-for="RePassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="ثبت نام" class="btn btn-primary" />
+                <a class="btn btn-empty" asp-action="Index">برگشت به صفحه اصلی</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+

@@ -1,0 +1,35 @@
+﻿@model Product
+@{
+	ViewData["Title"] = "برگراستور -" + @Model.Title;
+}
+<style>
+    h1 {
+        text-align: right;
+        margin:auto;
+    }</style>
+<div class="row">
+    <div class="col-1"></div>
+    <div class="col-5">
+    <img src="@($"/images/{Model.ImageName}.jpg")"
+         alt="@Model.Title"
+             class="img-fluid rounded  mx-auto d-block" />
+    </div>
+         <div class="col-3">
+        <h1 class="display-5">@Model.Title</h1>
+    <hr />
+    <p class=" text-justify">@Model.Desc</p>
+    <p class=" text-justify" style="margin-bottom:14rem">@Model.Price</p>
+    <div>
+      
+            <a class=" btn btn-primary"
+           asp-controller="Cart"
+           asp-action="AddToCart"
+           asp-route-id="@Model.ProductId">افزودن به سبد خرید</a>
+        </div>
+    </div>
+    
+</div>
+
+
+
+

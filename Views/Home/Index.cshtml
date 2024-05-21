@@ -1,0 +1,147 @@
+﻿@model IEnumerable<Product>
+@{
+	ViewData["Title"] = "برگر استور";
+}
+
+
+
+<style>
+
+	#products {
+		width: 60%;
+		margin: 50px auto;
+	}
+
+		#products ul {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 16px;
+			margin: 0;
+			padding: 0;
+			color: rgb(77, 153, 219);
+			list-style: none;
+		}
+
+	.food-items {
+		background-color: aliceblue;
+		border-radius: 6px;
+		overflow: hidden;
+	}
+
+		.food-items img {
+			height: 240px;
+			width: 100%;
+			object-fit: cover;
+		}
+
+	.food-item-content {
+		padding: 16px;
+		text-align: center;
+	}
+
+	.btn {
+		background-color: rgb(0, 167, 156);
+		color: white;
+		border-radius: 4px;
+		padding: 8px 24px;
+	}
+
+		.btn:hover {
+			background-color: rgb(0, 100, 138);
+		}
+
+	.modal {
+		position: fixed;
+		top: 15%;
+		left: 50%;
+		
+		background-color: white;
+		padding: 1rem;
+		border-radius: 6px;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+		display: none;
+	}
+
+	#backdrop {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.7);
+		display: none;
+	
+	}
+
+.row{
+		background-color: rgba(255, 255, 255, 0.7);
+}
+
+	.display-5{
+		text-align:right;
+	}
+</style>
+<div id="backdrop"></div>
+<section id="products">
+	<div class="row container">
+		<div class="col-12">
+			<ul>
+				@foreach (var x in Model)
+				{
+					<li class="food-items">
+						<article>
+							<img  src="~/images/@(x.ImageName)" />
+							<div class="food-item-content">
+								<h2>@x.Title</h2>
+								<button class="btn" id="DetailShow">جزییات</button>
+							</div>
+						</article>
+						<aside class="modal" id="config-overlay">
+							<div class="row">
+								
+								<div class="col-6">
+									<img style="height:70%" class="img-fluid rounded  mx-auto d-block" src="~/images/@(x.ImageName)" />
+								</div>
+								<div class="col-6">
+									<h1 class="display-5">@x.Title</h1>
+									<hr />
+									<p class=" text-justify">@x.Desc</p>
+									<p class=" text-justify" style="margin-bottom:14rem">@x.Price</p>
+									<div>
+
+										<a class="btn" asp-controller="Cart" asp-action="AddToCart" asp-route-id="@x.ProductId">افزودن به سبد خرید</a>
+										<button class="btn" id="DetailCancel">لغو</button>
+									</div>
+								</div>
+
+							</div>
+						</aside>
+						
+					</li>
+					
+				}
+			</ul>
+		</div>
+	</div>
+	
+	
+</section>
+<script>
+	const ShowFoodDetails = document.getElementById('DetailShow');
+	const asideplayer = document.getElementById('config-overlay');
+	const asidebackend = document.getElementById('backdrop');
+	const Canceler = document.getElementById('DetailCancel');
+
+	ShowFoodDetails.addEventListener('click', OpenDetailer);
+	Canceler.addEventListener('click', CloseDetailer);
+
+	function OpenDetailer() {
+		asideplayer.style.display = "block";
+		asidebackend.style.display = "block";
+	}
+
+	function CloseDetailer() {
+		asideplayer.style.display = "none";
+		asidebackend.style.display = "none";
+	}
+</script>

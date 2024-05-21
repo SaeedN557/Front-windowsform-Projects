@@ -1,0 +1,44 @@
+﻿@page
+@model WebFood_2.Pages.Admin.EditProductModel
+@{
+	ViewData["Title"] = "ویرایش کالا";
+}
+@section AdminStyle {
+    <link href="~/css/admin.css" rel="stylesheet" />
+}
+<h1>صفحه ویرایش مشخصات کالا</h1>
+
+<form enctype="multipart/form-data" method="post">
+    <section>
+        <h2>ایجاد کالای جدید</h2>
+        <ul>
+            <li><input type="hidden" asp-for="AddEditViewModel.ProductId" /></li>
+            <li>
+                <label >نام محصول</label>
+                <input asp-for="AddEditViewModel.Title" />
+                <span asp-validation-for="AddEditViewModel.Title"></span>
+            </li>
+            <li>
+                <label >توضیحات</label>
+                <textarea asp-for="AddEditViewModel.Desc" rows="2"></textarea>
+                <span asp-validation-for="AddEditViewModel.Desc"></span>
+            </li>
+            <li>
+                <label >قیمت</label>
+                <input asp-for="AddEditViewModel.Price" />
+                <span asp-validation-for="AddEditViewModel.Price"></span>
+            </li>
+            <li>
+                <label >تصویر</label>
+
+                <input asp-for="AddEditViewModel.Photo" />
+                <span asp-validation-for="AddEditViewModel.Photo"></span>
+            </li>
+        </ul>
+    </section>
+
+    <section id="form-actions">
+        <button type="reset" class="btn-empty">پاک کردن لیست</button>
+        <button type="submit" class="btn-filled">ویرایش</button>
+    </section>
+</form>

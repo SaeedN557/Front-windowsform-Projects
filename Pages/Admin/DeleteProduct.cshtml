@@ -1,0 +1,37 @@
+﻿@page
+@model WebFood_2.Pages.Admin.DeleteProductModel
+@{
+	ViewData["Title"] = "حذف محصول";
+}
+@section AdminStyle {
+	<link href="~/css/admin.css" rel="stylesheet" />
+}
+<form enctype="multipart/form-data" method="post">
+	<section>
+		<h2>ایجاد کالای جدید</h2>
+		<ul>
+			<li><input type="hidden" asp-for="Product.ProductId" /></li>
+			<li>
+				<label asp-for="Product.Title"></label>
+				<input asp-for="Product.Title" />
+				<span asp-validation-for="Product.Title"></span>
+			</li>
+			<li>
+				<label asp-for="Product.Desc"></label>
+				<textarea asp-for="Product.Desc" rows="2"></textarea>
+				<span asp-validation-for="Product.Desc"></span>
+			</li>
+			<li>
+				<label>تصویر</label>
+
+				<img src="/images/@(Model.Product.ProductId).jpg" style="max-width: 200px" />
+
+			</li>
+		</ul>
+	</section>
+
+	<section id="form-actions">
+		<button type="reset" class="btn-empty">پاک کردن فرم</button>
+		<button type="submit" class="btn-filled">حذف</button>
+	</section>
+</form>

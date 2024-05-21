@@ -1,0 +1,55 @@
+﻿@page
+@model WebFood_2.Pages.Admin.IndexModel
+@{
+	ViewData["Title"] = "صفحه کنترل محصولات";
+}
+<style>
+	body {
+		text-align: center
+	}</style>
+<h1>محصولات موجود</h1>
+<h2 class="btn btn-"><a asp-page="AddProduct" class="btn btn-empty">افزودن محصول</a></h2>
+<hr />
+ <div>
+<table class="table table-hover container">
+	<thead>
+		<tr class="table-danger">
+			<th scope="col">#</th>
+			<th scope="col">تصویر</th>
+			<th scope="col">نام محصول</th>
+			
+			<th scope="col">قیمت</th>
+			<th>عملیات</th>
+
+		</tr>
+	</thead>
+
+	<tbody>
+			@{
+				int count = 1;
+
+			@foreach (var x in Model.Products)
+			{
+				<tr>
+					<td scope="row">@count</td>
+					<td><img src="(@x.ImageName-Basket).jpg" /></td>
+					<td>@x.Title</td>
+					
+
+					<td>@x.Price</td>
+					<td>
+							<a class="btn btn-danger" asp-page="DeleteProduct" asp-route-id="@x.ProductId">حذف</a>
+							<a class="btn btn-close-white" asp-page="EditProduct" asp-route-id="@x.ProductId">ویرایش</a>
+						<a class="btn btn-success">افزودن</a>
+					</td>
+				</tr>
+				count++;
+			}
+		}
+	</tbody>
+	
+</table>
+<div>
+		
+</div>
+</div>

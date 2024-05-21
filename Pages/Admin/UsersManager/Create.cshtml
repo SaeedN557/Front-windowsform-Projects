@@ -1,0 +1,52 @@
+﻿@page
+@model WebFood_2.Pages.Admin.UsersManager.CreateModel
+
+@{
+    ViewData["Title"] = "افزودن کاربر";
+}
+<style>
+    body {
+        text-align: center
+    }</style>
+
+<h1 >منوی افزودن کاربر</h1>
+
+
+<hr />
+<div class="row" >
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label >نام کاربری</label>
+                <input asp-for="Users.UserName" class="form-control" />
+                <span asp-validation-for="Users.UserName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">ایمیل</label>
+                <input asp-for="Users.UserEmail" class="form-control" />
+                <span asp-validation-for="Users.UserEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label  class="control-label">رمز عبور</label>
+                <input asp-for="Users.Password" class="form-control" />
+                <span asp-validation-for="Users.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Users.IsAdmin" /> سطح دسترسی ادمین
+                </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="افزودن" class="btn btn-primary" />
+                <a asp-page="Index" class="btn btn-empty">بازگشت به منوی اصلی</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

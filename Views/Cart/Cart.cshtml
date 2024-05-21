@@ -1,0 +1,48 @@
+﻿@model Order
+
+@{
+	ViewData["Title"] = "سبد خرید";
+}
+<style>body{
+	text-align:center;
+}</style>
+<h1>سبد خرید</h1>
+
+<table class="table table-hover">
+	<thead>
+		<tr class="table-success">
+			<th scope="col">#</th>
+
+			<th scope="col">نام محصول</th>
+			<th scope="col">تعداد</th>
+			<th scope="col">قیمت</th>
+			<th scope="col"></th>
+		</tr>
+	</thead>
+
+	<tbody>
+		@{
+			int counter = 1;
+			foreach (var x in Model.OrderDetails)
+			{
+				<tr>
+					<td scope="row">@counter</td>
+					<td>@x.Product.Title</td>
+					<td>@x.Product.Desc</td>
+					<td>@x.Count</td>
+					<td>
+						<a class="btn btn-danger" asp-controller="Cart" asp-action="DeleteFromCart" asp-route-orderId="@x.OrderId">حذف</a>
+					</td>
+				</tr>
+				//sum += x.Count * x.Price;
+			}
+
+		}
+	</tbody>
+	<tfoot>
+
+	<td>جمع کل</td>
+	<td>@Model.OrderDetails.Sum(x=>x.Count*x.Price)</td>
+	<td><a asp-controller="Cart" asp-action="Payment" class="btn btn-filled" asp-route-id="@Model.UserId">پرداخت</a></td>
+	</tfoot>
+</table>
